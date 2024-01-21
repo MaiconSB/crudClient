@@ -18,7 +18,7 @@ public class Client {
 	private String name; 
 	private String cpf;
 	private Double income;
-	private LocalDate bithDate;
+	private LocalDate birthDate;
 	private Integer children;
 	
 	public Client() {}
@@ -55,12 +55,12 @@ public class Client {
 		this.income = income;
 	}
 
-	public LocalDate getBithDate() {
-		return bithDate;
+	public LocalDate getBirthDate() {
+		return birthDate;
 	}
 
-	public void setBithDate(LocalDate bithDate) {
-		this.bithDate = bithDate;
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public Integer getChildren() {

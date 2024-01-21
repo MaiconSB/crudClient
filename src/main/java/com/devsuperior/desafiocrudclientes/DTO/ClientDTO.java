@@ -4,21 +4,28 @@ import java.time.LocalDate;
 
 import com.devsuperior.desafiocrudclientes.entities.Client;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
+
 public class ClientDTO {
 
 	private Long id;
+	
+	@NotBlank(message = "Não pode ser vazio")
 	private String name; 
 	private String cpf;
 	private Double income;
-	private LocalDate bithDate;
+	
+	@PastOrPresent(message = "não pdoe ser data futura")
+	private LocalDate birthDate;
 	private Integer children;
 	
-	public ClientDTO(Long id, String name, String cpf, Double income, LocalDate bithDate, Integer children) {
+	public ClientDTO(Long id, String name, String cpf, Double income, LocalDate birthDate, Integer children) {
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
 		this.income = income;
-		this.bithDate = bithDate;
+		this.birthDate = birthDate;
 		this.children = children;
 	}
 	
@@ -27,7 +34,7 @@ public class ClientDTO {
 		name = entity.getName();;
 		cpf = entity.getCpf();;
 		income = entity.getIncome();;
-		bithDate = entity.getBithDate();;
+		birthDate = entity.getBirthDate();;
 		children = entity.getChildren();;
 	}
 
@@ -47,8 +54,8 @@ public class ClientDTO {
 		return income;
 	}
 
-	public LocalDate getBithDate() {
-		return bithDate;
+	public LocalDate getBirthDate() {
+		return birthDate;
 	}
 
 	public Integer getChildren() {
